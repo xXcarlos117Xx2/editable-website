@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4Geeks VSCode</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.51.0/min/vs/loader.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>4Geeks VSCode</h1>
+      <span class="hint">Arrastra bordes para redimensionar</span>
+    </header>
+
+    <iframe id="preview"></iframe>
+    <div class="resizer resizer-y" title="Arrastra para ajustar altura"></div>
+
+    <div class="editor-row">
+      <div class="panel" id="html-panel">
+        <div class="title">index.html</div>
+        <div class="editor" id="html-editor"></div>
+        <div class="resizer resizer-x" data-dir="x"></div>
+      </div>
+      <div class="panel" id="css-panel">
+        <div class="title">styles.css</div>
+        <div class="editor" id="css-editor"></div>
+        <div class="resizer resizer-x" data-dir="x"></div>
+      </div>
+      <div class="panel" id="js-panel">
+        <div class="title">app.js</div>
+        <div class="editor" id="js-editor"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
