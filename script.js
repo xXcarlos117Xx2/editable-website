@@ -86,6 +86,18 @@ window.require(["vs/editor/editor.main"], function () {
     );
 
     render();
+
+    (async () => {
+        try {
+            const { emmetHTML, emmetCSS } = await import(
+              "https://cdn.jsdelivr.net/npm/emmet-monaco-es@5.6.1/dist/emmet-monaco.esm.min.js"
+            );
+            emmetHTML(monaco);
+            emmetCSS(monaco);
+        } catch (err) {
+            console.warn("Emmet no disponible:", err);
+        }
+    })();
 });
 
 // https://www.freecodecamp.org/espanol/news/curso-debounce-javascript-como-hacer-que-tu-js-espere/
@@ -165,7 +177,6 @@ yResizer.addEventListener("mousedown", (e) => {
     }
 
     function up() {
-        // Restaurar interacción
         preview.style.pointerEvents = "auto"
         document.body.classList.remove("dragging-y")
         document.body.style.userSelect = ""
